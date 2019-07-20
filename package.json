@@ -1,0 +1,136 @@
+{
+  "name": "mis-publisher",
+  "productName": "MisPublisher",
+  "version": "0.0.1",
+  "description":
+    "A tool to publish and update Miscreated mods using steam workshop",
+  "main": ".webpack/main",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": "Chris Sprance <csprance@entradainteractive.com>",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "prune": true,
+        "asar": true,
+        "packageManager": "yarn",
+        "icon": "public/icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "mis-publisher"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": ["darwin"]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./webpack.main.config.js",
+            "renderer": {
+              "config": "./webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./public/index.html",
+                  "js": "./src/renderer/renderer.tsx",
+                  "name": "main_window"
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@hot-loader/react-dom": "^16.8.6",
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "file-loader": "^4.0.0",
+    "mousetrap": "^1.6.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "styled-components": "^4.3.2",
+    "typesafe-actions": "^4.4.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@electron-forge/cli": "^6.0.0-beta.39",
+    "@electron-forge/maker-deb": "^6.0.0-beta.39",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.39",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.39",
+    "@electron-forge/maker-zip": "^6.0.0-beta.39",
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.39",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@types/jest": "^24.0.15",
+    "@types/mousetrap": "^1.6.3",
+    "@types/node": "^12.0.8",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.5",
+    "@types/react-router": "^5.0.3",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/redux-logger": "^3.0.7",
+    "@types/styled-components": "^4.1.18",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "electron": "5.0.4",
+    "electron-devtools-installer": "^2.2.4",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "jest": "^24.8.0",
+    "node-loader": "^0.6.0",
+    "react-hot-loader": "^4.11.1",
+    "style-loader": "^0.23.1",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.3",
+    "typescript": "^3.5.2"
+  }
+}
