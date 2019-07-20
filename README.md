@@ -1,35 +1,26 @@
-# Electron-React-Typescript
+![MisPublisher](https://github.com/csprance/mis-publisher/blob/master/public/images/icon.png?raw=true)
+# Mis-Publisher
+> A tool to publish and manage multiple Miscreated mods using steam workshop.
 
-Boilerplate for develop Electron application with React and Typescript
 
-## this project powered by
+## Download
 
-- Electron-forge
-- React
-- Typescript
-- React-dev-tools
-- React Hot reloading
-- Eslint for Typescript linting
-- Material-UI
-- Styled-Components
-- Typesafe-Actions
-- Redux
-- React-router
+<a href="https://github.com/csprance/mis-publisher/releases/latest">Download the latest version here</a>
 
-and of course Webpack and Babel!
+# Features
 
-## How to use it
+- Publish Mods to Steam Workshop
+- Update mods on Steam Workshop
 
-- git clone <Repository Address>
-- npm install
-- npm start
 
-## Integrate in VSCode
 
-- in settings add :
+## Install
 
-  `"eslint.validate": [ "javascript", "javascriptreact", { "language": "typescript", "autoFix": true }, { "language": "typescriptreact", "autoFix": true }]`
+Grab the latest version from the <a href="https://github.com/csprance/mis-publisher/releases/latest">releases section</a> and install it.
 
-## Next Steps:
+| Operating System | Default Install Directory                             |
+| ---------------- | ----------------------------------------------------- |
+| Windows          | %LocalAppData%                                        |
 
-- add babel-eslint
+## Updating
+MisPublisher will automatically update itself as needed.

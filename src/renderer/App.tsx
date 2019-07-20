@@ -1,4 +1,3 @@
-import { MemoryRouter, Redirect, Route, Switch } from 'react-router';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Provider } from 'react-redux';
@@ -11,7 +10,6 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
 
 import './style.css';
-import routes from './routes';
 import Layout from './components/Layout';
 
 const { store, persistor } = configureStore();
@@ -23,20 +21,7 @@ const App = () => (
         <CssBaseline />
         <GlobalStyles />
         <ScrollbarStyles />
-        <Layout>
-          <MemoryRouter>
-            <Switch>
-              <Route exact path="/" render={() => <Redirect to="/main" />} />
-              {routes.map((route, idx) => (
-                <Route
-                  key={idx}
-                  path={route.path}
-                  component={route.component}
-                />
-              ))}
-            </Switch>
-          </MemoryRouter>
-        </Layout>
+        <Layout />
       </MuiThemeProvider>
     </PersistGate>
   </Provider>

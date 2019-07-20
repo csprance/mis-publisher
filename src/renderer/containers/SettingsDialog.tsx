@@ -8,12 +8,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import FloatingCloseButton from '../../../components/FloatingCloseButton';
-import { toggleSettingsDialog } from '../../../redux/app/actions';
-import { Dispatch, RootState } from '../../../redux/redux-types';
-import { bg1, bg3 } from '../../../styles/colors';
-import CredentialsSettingsSection from './CredentialsSettingsSection';
-import { settingsDialogOpenSelector } from '../../../redux/app/selectors';
+import FloatingCloseButton from '../components/FloatingCloseButton';
+import SettingsDialogCredentialsSettingsSection from '../components/SettingsDialogCredentialsSettingsSection';
+import { toggleSettingsDialog } from '../redux/app/actions';
+import { Dispatch, RootState } from '../redux/redux-types';
+import { settingsDialogOpenSelector } from '../redux/app/selectors';
+import { bg1, bg3 } from '../styles/colors';
 
 const Wrapper = styled.div`
   display: flex;
@@ -60,7 +60,7 @@ const SettingsDialog: React.FunctionComponent<Props & ReduxProps> = ({
 }) => {
   const [selected, setSelected] = React.useState<string>('app/terminal');
   const routes: { [route: string]: any } = {
-    'user/credentials': <CredentialsSettingsSection />,
+    'user/credentials': <SettingsDialogCredentialsSettingsSection />,
   };
   return (
     <Dialog

@@ -1,6 +1,7 @@
 import TextField from '@material-ui/core/TextField';
 import * as React from 'react';
 import styled from 'styled-components';
+
 import SettingsDialogSettingBox from './SettingsDialogSettingBox';
 
 const Wrapper = styled.div`
@@ -21,7 +22,7 @@ const AlignLeft = styled.div`
 `;
 
 interface Props {}
-const CredentialsSettingsSection: React.FunctionComponent<Props> = () => {
+const SettingsDialogCredentialsSettingsSection: React.FunctionComponent<Props> = () => {
   return (
     <Wrapper>
       <AlignLeft>Secrets Storage</AlignLeft>
@@ -42,4 +43,4 @@ const CredentialsSettingsSection: React.FunctionComponent<Props> = () => {
   );
 };
 
-export default CredentialsSettingsSection;
+export default SettingsDialogCredentialsSettingsSection;

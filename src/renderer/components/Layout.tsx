@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import SettingsDialog from '../containers/Dialogs/SettingsDialog';
-import ProgressBar from '../containers/ProgressBar';
 import TitleBar from './TitleBar';
+import ProgressBar from '../containers/ProgressBar';
+import SettingsDialog from '../containers/SettingsDialog';
 import { bg1 } from '../styles/colors';
 
 export const Wrapper = styled.div`
@@ -20,20 +20,16 @@ const Content = styled.div`
   height: 100%;
   width: 100%;
   background: ${bg1};
-`;
-const ContentColumn = styled(Content)`
-  flex-direction: column;
+  //overflow: scroll;
 `;
 
 interface Props {}
-const Layout: React.FunctionComponent<Props> = ({ children }) => {
+const Layout: React.FunctionComponent<Props> = () => {
   return (
     <Wrapper>
       <TitleBar />
       <Content>
-        <ContentColumn>
-          <Content>{children}</Content>
-        </ContentColumn>
+        Content Here
       </Content>
       <SettingsDialog />
       <ProgressBar />
