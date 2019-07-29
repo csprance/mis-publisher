@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   padding: 5px;
   flex-direction: column;
   flex-grow: 1;
+  height: ${(props: { height: string }) => props.height};
 `;
 const Top = styled.div`
   background: ${bg3};
@@ -20,11 +21,16 @@ const Bottom = styled.div`
 
 interface Props {
   title: string;
+  height?: string;
 }
 interface State {}
-const ContentBox: React.FunctionComponent<Props> = ({ title, children }) => {
+const ContentBox: React.FunctionComponent<Props> = ({
+  title,
+  children,
+  height = '100%',
+}) => {
   return (
-    <Wrapper>
+    <Wrapper height={height}>
       <Top>{title}</Top>
       <Bottom>{children}</Bottom>
     </Wrapper>

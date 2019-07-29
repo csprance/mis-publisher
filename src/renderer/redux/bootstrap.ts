@@ -8,8 +8,8 @@ import logger from '../lib/logger';
 // It is called after the store is rehydrated
 export default (store: Store) => () => {
   logger.info('Bootstrapping Application');
-
   const { dispatch }: { dispatch: Dispatch } = store;
+
   // Register all the apps hotkeys
   registerHotkeys(dispatch);
 };

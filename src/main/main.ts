@@ -21,9 +21,10 @@ const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     frame: false,
-    height: 768,
-    minHeight: 500,
+    width: 1024,
+    height: 1020,
     minWidth: 1024,
+    minHeight: 1020,
     show: true,
     webPreferences: {
       // @ts-ignore
@@ -32,7 +33,6 @@ const createWindow = () => {
       webSecurity: false,
       nodeIntegration: true,
     },
-    width: 1024,
   });
 
   // and load the index.html of the app.

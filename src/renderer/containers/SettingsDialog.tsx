@@ -62,15 +62,16 @@ const SettingsDialog: React.FunctionComponent<Props & ReduxProps> = ({
   const routes: { [route: string]: any } = {
     'user/credentials': <SettingsDialogCredentialsSettingsSection />,
   };
+  const handleClose = () => closeDialog();
   return (
     <Dialog
       style={{ overflow: 'hidden', overflowY: 'hidden' }}
       fullWidth
       fullScreen
-      onClose={() => closeDialog()}
+      onClose={handleClose}
       open={showing}
     >
-      <FloatingCloseButton onClick={() => closeDialog()} />
+      <FloatingCloseButton onClick={handleClose} />
       <Wrapper>
         <LeftSide>
           <Spacer />
@@ -129,12 +130,13 @@ const SettingsDialog: React.FunctionComponent<Props & ReduxProps> = ({
   );
 };
 
-const mapStateToProps = (state: RootState) => ({
-  showing: settingsDialogOpenSelector(state),
-});
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  closeDialog: () => {
-    dispatch(toggleSettingsDialog());
-  },
-});
-export default connect(mapStateToProps, mapDispatchToProps)(SettingsDialog);
+export default connect(
+  (state: RootState) => ({
+    showing: settingsDialogOpenSelector(state),
+  }),
+  (dispatch: Dispatch) => ({
+    closeDialog: () => {
+      dispatch(toggleSettingsDialog());
+    },
+  }),
+)(SettingsDialog);
