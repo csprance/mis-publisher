@@ -17,5 +17,8 @@ export interface AppState extends DialogState {
   localVersion: string;
   // Current remote version
   remoteVersion: string;
+
+  // Used in the Mod List to Filter published mods
+  searchTerm: string;
 }
 export type AppActions = ActionType<typeof actions>;

@@ -14,6 +14,9 @@ export default (
     case getType(actions.toggleSettingsDialog):
       return { ...state, settingsDialogOpen: !state.settingsDialogOpen };
 
+    case getType(actions.updateSearchTerm):
+      return { ...state, searchTerm: action.payload };
+
     default:
       return state;
   }

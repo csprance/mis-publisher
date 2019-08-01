@@ -8,4 +8,11 @@ export const registerHotkeys = (dispatch: Dispatch) => {
   mousetrap.bind('ctrl+r', () => {
     electron.remote.getCurrentWindow().reload();
   });
+
+  // Open the Dev Tools
+  mousetrap.bind('ctrl+alt+i', () => {
+    electron.remote.getCurrentWindow().webContents.openDevTools();
+  });
+
+
 };

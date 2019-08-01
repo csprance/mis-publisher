@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { bg3, darkDarkBlack } from '../styles/colors';
 
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
   padding: 5px;
   flex-direction: column;
@@ -14,25 +15,29 @@ const Top = styled.div`
   padding: 5px;
 `;
 const Bottom = styled.div`
-  padding: 5px;
+  padding: ${(props: {padding: string}) => props.padding};
   background: ${darkDarkBlack};
   height: 100%;
+  position: relative;
+  overflow: hidden;
 `;
 
 interface Props {
   title: string;
   height?: string;
+  padding?: string;
 }
 interface State {}
 const ContentBox: React.FunctionComponent<Props> = ({
   title,
   children,
   height = '100%',
+  padding = '5px'
 }) => {
   return (
     <Wrapper height={height}>
       <Top>{title}</Top>
-      <Bottom>{children}</Bottom>
+      <Bottom padding={padding}>{children}</Bottom>
     </Wrapper>
   );
 };

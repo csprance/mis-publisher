@@ -1,4 +1,5 @@
-![MisPublisher](https://github.com/csprance/mis-publisher/blob/master/public/images/icon.png?raw=true)
+<img src="https://github.com/csprance/mis-publisher/blob/master/public/images/icon.png?raw=true" width="300px"/>
+
 # Mis-Publisher
 > A tool to publish and manage multiple Miscreated mods using steam workshop.
 

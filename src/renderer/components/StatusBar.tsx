@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import * as npmPackage from '../../../package.json'
+
 const Wrapper = styled.div`
   display: flex;
   flex-grow: 1;
@@ -38,7 +40,7 @@ interface State {}
 const StatusBar: React.FunctionComponent<Props> = ({}) => {
   return (
     <Wrapper>
-      <VersionWrapper>Version 1.2.0</VersionWrapper>
+      <VersionWrapper>Version {npmPackage.version}</VersionWrapper>
       <EntradaWrapper>Image</EntradaWrapper>
       <WorkshopWrapper>Workshop</WorkshopWrapper>
       <Support>Support</Support>

@@ -1,7 +1,6 @@
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 
 interface Props {
   // Primary Text
@@ -16,13 +15,8 @@ const ListItemLink: React.FunctionComponent<Props> = ({
   to,
   currentPath,
 }) => {
-  const renderLink = React.forwardRef((props, _ref) => (
-    <Link to={to} {...props} />
-  ));
-
   return (
-    // @ts-ignore
-    <ListItem selected={currentPath === to} button component={renderLink}>
+    <ListItem selected={currentPath === to} button component={'a'}>
       <ListItemText primary={primary} />
     </ListItem>
   );
