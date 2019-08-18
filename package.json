@@ -31,6 +31,9 @@
           }
         }
       ],
+      "electronRebuildConfig": {
+
+      },
       "packagerConfig": {
         "prune": true,
         "asar": true,
@@ -87,7 +90,8 @@
     "styled-components": "^4.3.2",
     "typesafe-actions": "^4.4.2",
     "update-electron-app": "^1.5.0",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "xterm": "^3.14.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",

@@ -41,7 +41,6 @@ const BBCodeEditor: React.FunctionComponent<Props> = ({}) => {
   const onChange = (_editorState: EditorState) => {
     const contentState = _editorState.getCurrentContent();
     const bbcodeString = converter.bbcodeExport(contentState);
-    console.log(bbcodeString);
     setState(_editorState);
   };
 

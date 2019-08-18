@@ -7,6 +7,7 @@ export const defaultDialogState: DialogState = {
 
 export const defaultState: AppState = {
   searchTerm: '',
+
   localVersion: npmPackage.version,
   remoteVersion: npmPackage.version,
   ...defaultDialogState,

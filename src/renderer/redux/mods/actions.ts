@@ -53,3 +53,19 @@ export const toggleModsThunk = (
     dispatch(toggleMod.failure(err.toString()));
   }
 };
+
+export const refreshMod = createAsyncAction(
+  'mods/REFRESH_MOD_REQUEST',
+  'mods/REFRESH_MOD_SUCCESS',
+  'mods/REFRESH_MOD_FAILED',
+)<void, void, string>();
+export const refreshModThunk = (
+    id: number
+): AsyncThunkResult<void> => async dispatch => {
+  dispatch(refreshMod.request());
+  try {
+    dispatch(refreshMod.success());
+  } catch (err) {
+    dispatch(refreshMod.failure(err.toString()));
+  }
+};

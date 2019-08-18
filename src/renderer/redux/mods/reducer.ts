@@ -14,6 +14,15 @@ export default (
         selected: mod.id === action.payload,
       }));
 
+    case getType(actions.addMod.success):
+      return state;
+
+      case getType(actions.removeMod.success):
+      return  state;
+
+    case getType(actions.refreshMod.success):
+      return  state;
+
     default:
       return state;
   }
