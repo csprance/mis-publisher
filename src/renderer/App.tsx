@@ -12,6 +12,7 @@ import { hot } from 'react-hot-loader/root';
 import './style.css';
 import Layout from './components/Layout';
 
+
 const { store, persistor } = configureStore();
 
 const App = () => (

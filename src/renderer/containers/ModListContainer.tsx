@@ -27,6 +27,7 @@ const ModListContainer: React.FunctionComponent<Props> = () => {
     dispatch(modActions.selectMod(id));
 
   return (
+
     <>
       <ContentBox height={'auto'} title={'Search'}>
         <TextField
@@ -38,6 +39,7 @@ const ModListContainer: React.FunctionComponent<Props> = () => {
       </ContentBox>
 
       <ContentBox padding={'0'} title={'Published'}>
+
         <List component={'nav'}>
           {mods.map(mod => (
             <ListItem
@@ -57,6 +59,7 @@ const ModListContainer: React.FunctionComponent<Props> = () => {
         display={'flex'}
         flexDirection={'row'}
         alignItems={'center'}
+
         justifyContent={'space-evenly'}
         paddingTop={'5px'}
         width={'100%'}
@@ -71,5 +74,6 @@ const ModListContainer: React.FunctionComponent<Props> = () => {
     </>
   );
 };
+
 
 export default ModListContainer;

@@ -46,7 +46,10 @@ test('Mod To VDF File', async () => {
 });
 
 test('Run SteamCMD.exe with Params', async () => {
-  const response = await runSteamCmdWithParams('chrissprance', 'vertie12', 'test.vdf');
+
+  const response = await runSteamCmdWithParams('username', 'password', 'test.vdf');
+
   console.log(response);
+
   return expect(response).toBeDefined();
 });

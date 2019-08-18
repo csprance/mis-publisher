@@ -11,6 +11,7 @@ const TitleBarMenuButton: React.FunctionComponent<{
   <TitleBarButton menuClick={openSettings} type={'menu'} />
 );
 
+
 export default connect(undefined, (dispatch: Dispatch) => ({
   openSettings: () => dispatch(toggleSettingsDialog()),
 }))(TitleBarMenuButton);

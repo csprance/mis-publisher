@@ -17,6 +17,7 @@ body, html {
   flex-grow: 1;
   height: 100%;
   width: 100%;
+  
 }
 a {
   cursor: pointer;

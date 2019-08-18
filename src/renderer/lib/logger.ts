@@ -11,6 +11,7 @@ export const logger = winston.createLogger({
     winston.format.json(),
     winston.format.timestamp(),
   ),
+
   transports: [
     new winston.transports.File({
       filename: './logs/error.log',
